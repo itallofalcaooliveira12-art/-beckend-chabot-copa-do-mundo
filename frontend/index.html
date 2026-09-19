@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CopaBot — chatbot especializado em Copas do Mundo, futebol e esportes.">
+  <title>CopaBot — Futebol & Copas do Mundo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-ball">⚽</div>
+        <div>
+          <strong>CopaBot</strong>
+          <span>Futebol & Copas</span>
+        </div>
+      </div>
+
+      <button class="new-chat" id="newChatBtn">＋ Novo chat</button>
+
+      <div class="sidebar-label">Conversas recentes</div>
+      <div class="history-list" id="historyList"></div>
+
+      <div class="sidebar-footer">
+        <div class="status-dot"><i></i> IA online</div>
+        <small>Seu histórico fica salvo neste navegador.</small>
+      </div>
+    </aside>
+
+    <main class="chat-panel">
+      <header class="topbar">
+        <button class="icon-btn mobile-only" id="menuBtn" aria-label="Abrir menu">☰</button>
+        <div class="top-title">
+          <span class="mini-ball">⚽</span>
+          <div>
+            <strong>CopaBot</strong>
+            <span>Especialista em futebol</span>
+          </div>
+        </div>
+        <button class="icon-btn" id="clearBtn" title="Limpar conversa" aria-label="Limpar conversa">⌫</button>
+      </header>
+
+      <section class="chat-area" id="chatArea">
+        <div class="hero" id="welcome">
+          <div class="hero-ball">⚽</div>
+          <div class="eyebrow">CENTRO DE INTELIGÊNCIA DO FUTEBOL</div>
+          <h1>Fale sobre o jogo.</h1>
+          <p>História das Copas, seleções, jogadores, estatísticas, tática e futebol em geral.</p>
+
+          <div class="suggestions">
+            <button data-prompt="Quem tem mais títulos de Copa do Mundo?">🏆 Recordes das Copas</button>
+            <button data-prompt="Como funciona o impedimento no futebol?">📐 Regras do futebol</button>
+            <button data-prompt="Quais são as maiores seleções da história das Copas?">🌎 Seleções históricas</button>
+            <button data-prompt="Explique a evolução tática do futebol nas Copas.">🧠 Tática e evolução</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="typing" id="typing" hidden>
+        <span></span><span></span><span></span> CopaBot está pensando...
+      </div>
+
+      <form class="composer" id="composer">
+        <div class="input-wrap">
+          <textarea id="messageInput" rows="1" maxlength="4000"
+            placeholder="Pergunte sobre Copas do Mundo, futebol ou esportes..."></textarea>
+          <button class="send-btn" id="sendBtn" type="submit" aria-label="Enviar">➤</button>
+        </div>
+        <div class="composer-meta">
+          <span>Enter envia • Shift+Enter quebra linha</span>
+          <span id="charCount">0 / 4000</span>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
